@@ -45,7 +45,7 @@ public class UserController {
 	@RequestMapping(value="/update2")
 	// @RequestParam은 디폴드값으로 생략되어있다.
 	public String update2(
-			@RequestParam(value="n", required=true, defaultValue="") String name, 
+			@RequestParam(value="n", required=true ,defaultValue="") String name, 
 			@RequestParam(value="a", required=true, defaultValue="0") int age) {
 		System.out.println("---" + name + "---" + age +"---");
 		return "UserController:update2";
