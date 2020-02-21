@@ -38,6 +38,7 @@ public class GuestbookController {
 	}
 	
 	@RequestMapping(value="/delete/{no}", method=RequestMethod.POST)
+	// @PathVariable는 url파라미터값 @RequestParam는 일반 파라미터값을 갖고온다.
 	public String delete(@PathVariable("no") Long no,@RequestParam("password") String password) {
 		guestbookRepository.delete(no,password);
 		return "redirect:/";
