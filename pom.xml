@@ -14,5 +14,7 @@
 		<module>guestbook03</module>
 		<module>re-guestbook03</module>
 		<module>fileupload</module>
+		<module>logex</module>
+		<module>aoptest</module>
 	</modules>
 </project>
