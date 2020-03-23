@@ -13,7 +13,63 @@
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
         
 	<bean id="user1" class = "com.douzone.container.user.User1"></bean>
+	
+	<!-- 기본 생성자로 빈 생성 -->
+	<bean id="user" name="usr" class = "com.douzone.container.user.User"></bean>
+	
+	<!-- 파라미터 1개로 생성자로 빈 생성 -->
+	<bean id="user2" name="usr2" class = "com.douzone.container.user.User">
+		<constructor-arg value="둘리" />
+	</bean>
+	
+	<!-- 파라미터 2개로 생성자로 빈 생성 1-->
+	<bean id="user3" class = "com.douzone.container.user.User">
+		<constructor-arg value="3" />
+		<constructor-arg value="마이콜" />
+	</bean>
+	
+	<!-- 파라미터 2개로 생성자로 빈 생성2 -->
+	<bean id="user4" class = "com.douzone.container.user.User">
+		<constructor-arg index = "1" value="도우넛" />
+		<constructor-arg index = "0" value="4" />
+	</bean>
 
-
+	<!-- setter 사용하기-->
+	<bean id="user5" class = "com.douzone.container.user.User">
+		<property name="no" value="5" />
+		<property name="name" value="또치" />
+		<!-- DI -->
+		<property name="friend" ref="friend" />
+	</bean>
+	
+	<bean id="friend" class="com.douzone.container.user.Friend">
+		<constructor-arg value="길동" />
+	</bean>
+	
+	<!-- User 객체를 생성하면서 friend객체를 바로 DI하기-->
+	<bean id="user6" class = "com.douzone.container.user.User">
+		<property name="no" value="6" />
+		<property name="name" value="영희" />
+		<!-- DI -->
+		<property name="friend" >
+			<bean class = "com.douzone.container.user.Friend">
+				<constructor-arg value="철수" />
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- setter를 사용한 list세팅하기 -->
+	<bean id="user7" class = "com.douzone.container.user.User">
+		<constructor-arg value="7" />
+		<constructor-arg value="아이언맨" />
+		<property name="friends">
+			<list>
+				<value>스파이더맨</value>
+				<value>캡틴아메리카</value>
+				<value>윈터솔져</value>
+			</list>
+		</property>
+	</bean>
+	
 </beans>
  
