@@ -16,5 +16,6 @@
 		<module>fileupload</module>
 		<module>logex</module>
 		<module>aoptest</module>
+		<module>container</module>
 	</modules>
 </project>
