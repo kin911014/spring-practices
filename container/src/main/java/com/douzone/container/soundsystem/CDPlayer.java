@@ -11,6 +11,7 @@ public class CDPlayer {
 	// wiring01: 바이너리 주입(CGLib) 최근 방식, 가장 좋은 방식이다.
 //	@Inject(자바 표준 Wiring annotation)
 //	@Autowired(Wiring annotation)
+	
 	@Autowired
 	@Qualifier("highSchoolRapper3Final")
 	private CompactDisc cd;
