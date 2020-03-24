@@ -29,7 +29,7 @@ public class DVDPlayerJavaConfigTest {
 	@Qualifier("dvdPlayer04")    // @Bean의 name의 값
 	private DVDPlayer player;
 	
-	
+	 
 	@Test
 	public void testDVDNotNull() {
 		assertNotNull(dvd);
